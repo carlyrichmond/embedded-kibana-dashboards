@@ -1,0 +1,26 @@
+{
+  "name": "embedded-kibana-dashboards",
+  "version": "1.0.0",
+  "description": "Example Web Frontend Application with Embedded Kibana Dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlyrichmond/embedded-kibana-dashboards.git"
+  },
+  "keywords": [
+    "kibana",
+    "javascript"
+  ],
+  "author": "Carly Richmond",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/carlyrichmond/embedded-kibana-dashboards/issues"
+  },
+  "homepage": "https://github.com/carlyrichmond/embedded-kibana-dashboards#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
