@@ -1,3 +1,0 @@
-function onButtonClick() {
-    alert("Hi!");
-}

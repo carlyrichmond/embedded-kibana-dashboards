@@ -1,0 +1,24 @@
+/*Heading styling*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+#plane-logo {
+    width: 2rem;
+    height: 1rem;
+}
+
+h1 {
+    font-family: "Roboto";
+    font-size: x-large;
+}
+
+iframe {
+    height: 1250;
+    width: 100%;
+}

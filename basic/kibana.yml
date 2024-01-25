@@ -1,0 +1,10 @@
+# WARNING: the below setting prevents embedding, so make sure it is not enabled (default: disabled)
+# server.securityResponseHeaders.disableEmbedding: true
+
+xpack.security.sameSiteCookies: "None"
+xpack.security.authc.providers:
+  anonymous.anonymous1:
+    order: 0
+    credentials:
+      username: "anonymous_user"
+      password: "password"
