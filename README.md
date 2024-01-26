@@ -26,4 +26,8 @@ Once the server is started the application will be available at `http://localhos
 There are two examples included within the repo:
 
 1. Basic embedded Kibana dashboard using the public URL included in an iframe with dashboard controls to filter the data. This is accessible at `http://localhost:3000/basic`.
-2. An extended example, available at `http://localhost:3000/advanced`, uses dropdown controls to filter data. [TODO]
+2. An extended example, available at `http://localhost:3000/advanced`, uses dropdown controls to filter data in the Kibana dashboard.
+
+## Sources
+
+* Calendar image used in datepicker sourced from Calendar by scribble.glyph from [Noun Project](https://thenounproject.com/browse/icons/term/calendar/)

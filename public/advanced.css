@@ -1,0 +1,23 @@
+
+nav {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+}
+
+#datepicker {
+    width: 13rem;
+    height: 3rem;
+
+    padding-left: 2rem;
+    background: url("../public/noun-calendar-2336423.png") no-repeat left;
+    background-size: 2rem;
+}
+
+.datepicker-icon {
+    width: 2rem;
+    height: 2rem;
+    justify-self: flex-start;
+
+    margin-right: -8rem;
+}
