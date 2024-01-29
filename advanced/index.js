@@ -1,5 +1,8 @@
-let dashboardUri=getDashboardUri();
+let selectedStartDate = 'now-1y';
+let selectedEndDate = 'now';
+let selectedCarrier = 'Kibana Airlines';
 
+let dashboardUri=getDashboardUri();
 const iframe = document.getElementById('kibana-dashboard');
 iframe.setAttribute('src', dashboardUri);
 
@@ -11,7 +14,7 @@ const picker = new easepick.create({
     zIndex: 10,
     firstDay: 0,
     autoApply: false,
-    format: 'MMM DD, YYYY @ HH:MM:SS',
+    format: 'MMM DD, YYYY @ HH:MM:00',
     plugins: [
         'RangePlugin',
         'TimePlugin'
@@ -19,23 +22,24 @@ const picker = new easepick.create({
     setup(picker) {
         picker.on('select', (e) => {
             const dateFormat = 'YYYY-MM-DDTHH:MM:00.000Z';
-            const startDate =  picker.getStartDate().format(dateFormat);
-            const endDate =  picker.getEndDate().format(dateFormat);
+            selectedStartDate =  picker.getStartDate().format(dateFormat);
+            selectedEndDate =  picker.getEndDate().format(dateFormat);
             
-            dashboardUri=getDashboardUri(startDate, endDate);
+            dashboardUri=getDashboardUri();
             iframe.setAttribute('src', dashboardUri);
         });
      }
 });
 
-function getDashboardUri(startDate, endDate) {
-    if (!startDate) {
-        startDate = 'now-1y';
-    }
+function getDashboardUri() {
+    const carrierQuery = rison.encode_object({Carrier : encodeURIComponent(selectedCarrier)});
+    return `https://my-elastic-deployment:9243/app/dashboards?auth_provider_hint=anonymous1#/view/7adfa750-4c81-11e8-b3d7-01146121b73d?embed=true&_g=(filters:!(),refreshInterval:(pause:!f,value:0),time:(from:'${selectedStartDate}',to:'${selectedEndDate}'))&_a=(query:(language:kuery,query:'${carrierQuery}'))&hide-time-filter=true`;
+}
 
-    if (!endDate) {
-        endDate = 'now';
-    }
+function updateWithCarrier() {
+    const carrierSelect = document.getElementById('carrier-select');
+    selectedCarrier = carrierSelect.value || '';
 
-    return `https://my-elastic-deployment-9f9945:9243/app/dashboards?auth_provider_hint=anonymous1#/view/7adfa750-4c81-11e8-b3d7-01146121b73d?embed=true&_g=(filters:!(),refreshInterval:(pause:!f,value:0),time:(from:'${startDate}',to:'${endDate}'))&hide-time-filter=true`;
+    dashboardUri=getDashboardUri();
+    iframe.setAttribute('src', dashboardUri);
 }

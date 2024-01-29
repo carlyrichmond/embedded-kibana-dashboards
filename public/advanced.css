@@ -3,6 +3,7 @@ nav {
     display: flex;
     height: 4rem;
     align-items: center;
+    gap: 2rem;
 }
 
 #datepicker {
@@ -20,4 +21,21 @@ nav {
     justify-self: flex-start;
 
     margin-right: -8rem;
+}
+
+.carrier-select-container {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-family: "Roboto";
+    font-size: small;
+}
+
+#carrier-select {
+    width: 10rem;
+    height: 2rem;
+
+    gap: 1rem;
 }

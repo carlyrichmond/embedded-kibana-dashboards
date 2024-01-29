@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/carlyrichmond/embedded-kibana-dashboards#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "rison": "^0.1.1"
   }
 }

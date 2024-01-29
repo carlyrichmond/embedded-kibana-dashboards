@@ -6,6 +6,7 @@
     <link rel="stylesheet"
           href="../public/advanced.css">      
     <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/rison.js"></script>
     <script src="../advanced/index.js" defer></script>
 </head>
 <body>
@@ -15,9 +16,17 @@
     </header>
     <main>
         <nav>
-            <input id="datepicker" aria-placeholder="Select date range" placeholder="Select date range">
-            <div id="test"></div>
-            </input>
+            <input id="datepicker" aria-placeholder="Select date range" placeholder="Select date range"></input>
+            
+            <div class="carrier-select-container">
+                <label for="carrier-select">Carrier</label>
+                <select name="carrier-select" id="carrier-select" onchange="updateWithCarrier()">
+                    <option value="ES-Air">ES-Air</option>
+                    <option value="JetBeats">JetBeats</option>
+                    <option value="Kibana Airlines">Kibana Airlines</option>
+                    <option value="Logstash Airways">Logstash Airways</option>
+                </select>
+            </div>
         </nav>
         <iframe id="kibana-dashboard"></iframe>
     </main>
